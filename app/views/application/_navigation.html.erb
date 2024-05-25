@@ -1,0 +1,20 @@
+<nav class="bg-white shadow-md py-4">
+  <div class="container mx-auto flex justify-between items-center px-4">
+    <div class="flex space-x-6">
+      <a href="/" class="text-teal-600 font-medium">Home</a>
+      <a href="#users" class="text-teal-600 font-medium">Users</a>
+      <a href="#courses" class="text-teal-600 font-medium">Courses</a>
+      <a href="#progress" class="text-teal-600 font-medium">Progress</a>
+      <a href="#contact" class="text-teal-600 font-medium">Contact</a>
+    </div>
+    <div class="flex space-x-6">
+      <% if user_signed_in? %>
+        <%= link_to "Edit Password", edit_password_path, class: "text-teal-600 font-medium" %>
+        <%= button_to "Log out", session_path, method: :delete, class: "text-teal-600 font-medium" %>
+      <% else %>
+        <%= link_to "Sign Up", new_registration_path, class: "text-teal-600 font-medium" %>
+        <%= link_to "Log In", new_session_path, class: "text-teal-600 font-medium" %>
+      <% end %>
+    </div>
+  </div>
+</nav>
